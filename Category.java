@@ -1,48 +1,48 @@
-package com.edu.demo.entity;
+package com.example.demo.model;
 
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "Category")
 public class Category {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-private Long categoryId;
-private String categoryName;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+	
+	@Column(name="cat_name")
+	private String cat_name;
+	
 
+	public Category(){
+		
+	}
 
-public Category(Long categoryId, String categoryName) {
-	super();
-	this.categoryId = categoryId;
-	this.categoryName = categoryName;
-}
+	public Category(Long id, String name) {
+		super();
+		this.id = id;
+		this.cat_name = name;
+	}
 
-public Long getCategoryId() {
-	return categoryId;
-}
-public void setCategoryId(Long categoryId) {
-	this.categoryId = categoryId;
-}
-public String getCategoryName() {
-	return categoryName;
-}
-public void setCategoryName(String categoryName) {
-	this.categoryName = categoryName;
-}
+	public Long getId() {
+		return id;
+	}
 
-@Override
-public String toString() {
-	return "Category [categoryId=" + categoryId + ", categoryName=" + categoryName + "]";
-}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
+	public String getCat_name() {
+		return cat_name;
+	}
 
-
-
-
-
-
-
+	public void setCat_name(String cat_name2) {
+		// TODO Auto-generated method stub
+		
+	}
 }

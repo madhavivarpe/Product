@@ -1,17 +1,9 @@
-//Repository
-
-package com.edu.demo.repository;
-
+package com.example.demo.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-import com.edu.demo.entity.Category;
-@Repository
-public interface CategoryRepository extends JpaRepository<Category, Long> {
+import com.example.demo.model.Category;
 
-	public Category findByCategoryName(String categoryName);
+public interface CategoryRepository extends JpaRepository<Category,Long> {
 
-	
-	
 }
